@@ -1,0 +1,74 @@
+DESCRIZIONE:
+
+firstnum è un comando di terminale che permette di ottenere liste di numeri primi
+e/o dei fattori primi di scomposizione da una serie indicata come argomenti nel
+comando stesso. Esempio: firstnum 1000 1030
+
+firstnum dispone di una serie di opzioni che operano sia come filtri sulla
+visualizzazione che come funzionalita specifiche. Esempio: firstnum -p 1 10000
+
+first è un comando di terminale (semplificazione di firstnum) che permette di
+conoscere se un numero è primo o divisibile. È possibile ottenere anche una lista
+di numeri primi all'interno di una serie specificata. Esempio: first 12345 67899
+
+
+
+INSTALLAZIONE:
+
+L'installazione dei due comandi è relativamente semplice, è sufficiente seguire
+i passi sotto riportati.
+Sono possibili due procedure: 
+
+Procedura manuale:
+Per installare firstnum e first copiare da terminale, usando il comando cp, i 
+relativi file in una directory del Path di sistema come /bin o /usr/bin, oppure
+anche solamente nella directory bin o .local/bin della directory utente. Infine
+copiare anche la directory nascosta .fnl nella directory utente.
+Aprire una shell di terminale, quindi eseguire in sequenza i seguenti comandi:
+
+ cd <PATH>/Firstnum-public-108b
+ sudo cp first /bin/
+ sudo cp firstnum /bin/
+ cp -r .fnl $HOME
+
+Procedura automatica:
+Per installare firstnum e first eseguire in sequenza i seguenti comandi: 
+
+ cd <PATH>/Firstnum-public-108b
+ sh ./install.sh
+ 
+NOTA: <PATH> si intende il percorso attuale = $HOME/<PATH>, ovvero il percorso
+che porta alla directory Firstnum-public-108b, altrimenti non funziona.
+
+
+
+USO:
+Per usare i comandi first e firstnum, una volta installati nel Path,
+digitarne semplicemente il nome e riferirsi agli help per le modalità
+operative.
+
+
+
+EXTRA:
+
+Nella directory Firstnum-public-108b sono presenti anche i sorgenti dei comandi
+firstnum e first in linguaggio C.
+Gli stessi comandi poi sono anche presenti con i seguenti nomi:
+firstnum, firstnum108b, first e first103 (eseguibili),
+firstnum108b.c, firstnum108b (copia).c, first103.c e first103 (copia).c (sorgenti). 
+
+Per visualizzare correttamente predisporre adeguatamente gedit (per GNOME)
+o qualsiasi altro text editor, ad esempio Kate (per KDE) alla visualizzazione
+dei sorgenti in C.
+
+Attivare la "visualizzazione dei numeri di riga", il "a capo automatico", il
+"margine destro ad 80 o 132 colonne", il "non dividere le parole su due righe",
+il "riconoscimento automatico del tipo di testo" (evidenziazione) che deve
+essere impostato su linguaggio C; inoltre, molto importante, la tabulazione
+deve essere corrispondente a 3 spazi, o in alternativa attivare "inserire
+spazi invece delle tabulazioni". Se possibile attivare anche l'evidenziazione
+del margine destro e della riga corrente.
+Vedere le impostazioni dei rispettivi editor per attivarne le voci se possibile.
+
+Tutto quì.
+
