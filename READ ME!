@@ -1,3 +1,4 @@
+
 DESCRIPTION:
 
 firstnum is a terminal command which permits to obtain lists of prime number
@@ -6,11 +7,12 @@ argument in the same command. Example: firstnum 1000 1030
 
 firstnum have a series of option that work both as filters on the visualisation
 and as specific functionality. Example: firstnum -p 1 10000
+To get a complete list of available options, run the firstnum command with the
+--help option.
 
 first is a terminal command (semplification of firstnum) which permits to know
 if is a prime number of a divisble number. It is possible obtain also a list of
 prime number into a specified series. Example: first 12345 67899
-
 
 
 
@@ -27,36 +29,80 @@ directory bin or .local/bin of the user directory. Finally copy also the hidden
 directory .fnl in the user directory.
 Open a shell of terminal, so run in sequence the follow commands:
 
- cd <PATH>/Firstnum-public-108b
- sudo cp first /bin/
- sudo cp firstnum /bin/
- cp -r .fnl $HOME
- 
+ $ cd <PATH>/Firstnum-public-109a-20260421
+ $ sudo cp -a first /bin/
+ $ sudo cp -a  firstnum /bin/
+ $ rm -r $HOME/.fnl    (<-- Only run if a previous version is installed.)
+ $ cp -R -a .fnl $HOME
+
 Automatic procedure:
-To install firstnum and first run in sequence the follow commands: 
- 
- cd <PATH>/Firstnum-public-108b
- sh ./install.sh
- 
-NOTE: for <PATH> that interpret the actual path = $HOME/<PATH>, or rather the path
-which bring to the directory Firstnum-public-108b, otherwise it doesn't work.
+To automatic install firstnum and first run in sequence the follow commands:
+
+ $ cd <PATH>/Firstnum-public-109a-20260421
+ $ . install.sh
+
+NOTE: <PATH> is the current path = $HOME/<PATH>, which is the path that leads to
+the firstnum-public-109a-20260213 directory. You have to go to the current path
+otherwise the installation procedure does non work.
+
+
+
+UNINSTALLATION:
+
+To completely uninstall firstnum, proceed as follows:
+
+Manual procedure:
+To manually uninstall first and firstnum, run the following commands in sequence:
+
+ $ rm $HOME/.fstlang.cfg
+ $ rm $HOME/.firstlang.cfg
+ $ rm -r $HOME/.fnl
+ $ sudo rm /bin/first
+ $ sudo rm /bin/firstnum
+
+Automatic procedure:
+To automatically uninstall first and firstnum, run the following commands in sequence:
+
+ $ cd <PATH>/Firstnum-public-109a-20260421
+ $ . uninstall.sh
+
+NOTE: <PATH> is the current path = $HOME/<PATH>, which is the path that leads to
+the firstnum-public-109a-20260213 directory. You have to go to the current path
+otherwise the uninstallation procedure does non work.
 
 
 
 USE:
 
-To use first and firstnum commands, when installed in the path,
-type only the name and refer to the help for operating modality.
+To use first and firstnum commands, when installed in the path, type only the name
+and refer to the help for operating modality.
+
+Examples: firstnum
+          firstnum --help
+          firstnum -O
+          firstnum 321987
+          firstnum -a 65500 65599
+          firstnum -aL 1 65535 >> lista.txt
+          firstnum -al 65536 131071 >> lista.txt
+          firstnum -pn 10000 20000
+          firstnum -pc 100 2000
 
 
 
 EXTRA:
 
-In the directory Firstnum-public-108b there are also the sources of firstnum and
- first in C language.
+You can also run firstnum on Windows by pre-enabling WSL (Windows Subsystem Linux)
+support. After enabling WSL on Windows via the PowerShell terminal, simply follow
+the steps above for a standard GNU/Linux installation.
+Please note: firstnum is run in the Windows terminal (PowerShell) after typing the
+wsl command and entering the GNU/Linux environment.
+
+In the directory Firstnum-public-109a-20260421 there are also the sources of firstnum
+and first in C language.
 The same commands are also there with the following names:
-firstnum, firstnum108b, first and first103 (executable),
-firstnum108b.c, firstnum108b (copia).c, first103.c and first103 (copia).c (sources).
+firstnum, firstnum109a-20260319, first and first104-20260416 (executable),
+firstnum109a-20260319.c, firstnum109a-20260319 (copia).c, first104-20260416.c
+and first104-20260416 (copia).c (sources).
 
 To accurately display them adequately prepare gedit(for GNOME) or whatever else
 text editor, for example Kate (per KDE) to the view of C source.
@@ -66,9 +112,11 @@ Turn on the "visualisation of straight number", "a new paragraph automatic",
 "automatic identification of the type of the text" (highlighting)
 which need to be set up on C language; furthermore, much important,
 the tabulation need to be corresponding to 3 or 4 spaces,
-or alternatively turn on "insert spaces instead of tabulations".
-If possible turn on also the highlighting of the right margin and the current line.
+or alternatively turn on "Insert spaces instead of tabs". If possible turn on also
+the highlighting of the right margin and the current line.
+(Note: The C sources were written with the gedit editor with the "Insert spaces
+instead of tabs" option enabled.)
 See the settings of respective editor to turn on the voices if possible.
 
-That's all.
+That's all. Thank you.
 

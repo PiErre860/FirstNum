@@ -1,3 +1,4 @@
+
 DESCRIZIONE:
 
 firstnum è un comando di terminale che permette di ottenere liste di numeri primi
@@ -6,6 +7,8 @@ comando stesso. Esempio: firstnum 1000 1030
 
 firstnum dispone di una serie di opzioni che operano sia come filtri sulla
 visualizzazione che come funzionalita specifiche. Esempio: firstnum -p 1 10000
+Per ottenere la lista completa delle opzioni disponibili, eseguire il comando
+firstnum con l'opzione --help.
 
 first è un comando di terminale (semplificazione di firstnum) che permette di
 conoscere se un numero è primo o divisibile. È possibile ottenere anche una lista
@@ -15,47 +18,96 @@ di numeri primi all'interno di una serie specificata. Esempio: first 12345 67899
 
 INSTALLAZIONE:
 
-L'installazione dei due comandi è relativamente semplice, è sufficiente seguire
+L'installazione di firstnum e first è relativamente semplice, è sufficiente seguire
 i passi sotto riportati.
-Sono possibili due procedure: 
+Sono possibili due procedure:
 
 Procedura manuale:
-Per installare firstnum e first copiare da terminale, usando il comando cp, i 
+Per installare firstnum e first copiare da terminale, usando il comando cp, i
 relativi file in una directory del Path di sistema come /bin o /usr/bin, oppure
 anche solamente nella directory bin o .local/bin della directory utente. Infine
 copiare anche la directory nascosta .fnl nella directory utente.
 Aprire una shell di terminale, quindi eseguire in sequenza i seguenti comandi:
 
- cd <PATH>/Firstnum-public-108b
- sudo cp first /bin/
- sudo cp firstnum /bin/
- cp -r .fnl $HOME
+ $ cd <PATH>/Firstnum-public-109a-20260421
+ $ sudo cp -a first /bin/
+ $ sudo cp -a firstnum /bin/
+ $ rm -r $HOME/.fnl    (<-- Da eseguire solo se è intallata una versione precedente.)
+ $ cp -R -a .fnl $HOME
 
 Procedura automatica:
-Per installare firstnum e first eseguire in sequenza i seguenti comandi: 
+Per installare automaticamente firstnum e first eseguire in sequenza i seguenti
+comandi:
 
- cd <PATH>/Firstnum-public-108b
- sh ./install.sh
- 
-NOTA: <PATH> si intende il percorso attuale = $HOME/<PATH>, ovvero il percorso
-che porta alla directory Firstnum-public-108b, altrimenti non funziona.
+ $ cd <PATH>/Firstnum-public-109a-20260421
+ $ . install.sh
+
+NOTA: Per <PATH> si intende il percorso attuale = $HOME/<PATH>, ovvero il percorso
+che porta alla directory Firstnum-public-109a-20260213. Occorre portarsi nel Path
+attuale altrimenti la procedura di installazione non funziona.
+
+
+
+DISINSTALLAZIONE:
+
+Per effettuare la disinstallazione completa di firstnum è necessario procedere
+come segue:
+
+Procedura manuale:
+Per disinstallare manualmente first e firstnum eseguire in sequenza i seguenti
+comandi:
+
+ $ rm $HOME/.fstlang.cfg
+ $ rm $HOME/.firstlang.cfg
+ $ rm -r $HOME/.fnl
+ $ sudo rm /bin/first
+ $ sudo rm /bin/firstnum
+
+Procedura automatica:
+Per disinstallare automaticamente first e firstnum eseguire in sequenza iseguenti
+comandi:
+
+ $ cd <PATH>/Firstnum-public-109a-20260421
+ $ . uninstall.sh
+
+NOTA: Per <PATH> si intende il percorso attuale = $HOME/<PATH>, ovvero il percorso
+che porta alla directory Firstnum-public-109a. Occorre portarsi nel Path attuale
+altrimenti la procedura di disinstallazione non funziona.
 
 
 
 USO:
-Per usare i comandi first e firstnum, una volta installati nel Path,
-digitarne semplicemente il nome e riferirsi agli help per le modalità
-operative.
+
+Per usare i comandi first e firstnum, una volta installati nel Path, digitarne
+semplicemente il nome e riferirsi agli help per le modalità operative.
+
+Esempi: firstnum
+        firstnum --help
+        firstnum -O
+        firstnum 321987
+        firstnum -a 65500 65599
+        firstnum -aL 1 65535 >> lista.txt
+        firstnum -al 65536 131071 >> lista.txt
+        firstnum -pn 10000 20000
+        firstnum -pc 100 2000
 
 
 
 EXTRA:
 
-Nella directory Firstnum-public-108b sono presenti anche i sorgenti dei comandi
-firstnum e first in linguaggio C.
+È possibile eseguire firstnum anche in ambiente Windows avendo preabilitato il
+supporto WSL (Windows Subsystem Linux). Dopo avere abilitato l'ambiente WSL in
+Windows, tramite il terminale PowerShell, è sufficiente eseguire la procedura
+sopra riportata utilizzata per la normale installazione in ambiente GNU/Linux.
+N.B. firstnum si esegue nel terminale (PowerShell) di Windows dopo avere
+digitato il comando wsl ed essere entrati in ambiente GNU/Linux.
+
+Nella directory Firstnum-public-109a-20260421 sono presenti anche i sorgenti
+dei comandi firstnum e first in linguaggio C.
 Gli stessi comandi poi sono anche presenti con i seguenti nomi:
-firstnum, firstnum108b, first e first103 (eseguibili),
-firstnum108b.c, firstnum108b (copia).c, first103.c e first103 (copia).c (sorgenti). 
+firstnum, firstnum109a-20260319, first e first104-20260416 (eseguibili),
+firstnum109a-20260319.c, firstnum109a-20260319 (copia).c, first104-20260416.c
+e first104-20260416 (copia).c (sorgenti).
 
 Per visualizzare correttamente predisporre adeguatamente gedit (per GNOME)
 o qualsiasi altro text editor, ad esempio Kate (per KDE) alla visualizzazione
@@ -65,10 +117,13 @@ Attivare la "visualizzazione dei numeri di riga", il "a capo automatico", il
 "margine destro ad 80 o 132 colonne", il "non dividere le parole su due righe",
 il "riconoscimento automatico del tipo di testo" (evidenziazione) che deve
 essere impostato su linguaggio C; inoltre, molto importante, la tabulazione
-deve essere corrispondente a 3 spazi, o in alternativa attivare "inserire
-spazi invece delle tabulazioni". Se possibile attivare anche l'evidenziazione
-del margine destro e della riga corrente.
+deve essere corrispondente a 3 spazi, o in alternativa attivare la spunta su
+"inserire spazi invece di tabulazioni". Se possibile attivare anche l'eviden-
+ziazione del margine destro e della riga corrente.
+(Nota: I sorgenti in C sono stati stati scritti con l'editor gedit con l'opzione
+"Inserire spazi invece di tabulazioni" attivata.)
 Vedere le impostazioni dei rispettivi editor per attivarne le voci se possibile.
 
-Tutto quì.
+Tutto qui. Grazie.
+
 
