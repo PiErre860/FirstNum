@@ -1,0 +1,642 @@
+
+-----------------------------------
+Tutorial di Firstnum versione 1.09a
+-----------------------------------
+
+Cos'e Firstnum109a e cosa fa.
+Firstnum109a è un pacchetto Software in formato tar.xz (da scompattare) che fondamentalmente
+contiene due comandi per terminale a riga di comando, precisamente firstnum e first.
+firstnum è un programma per il terminale a riga di comando di GNU/Linux, che usa solitamente
+la BASH (Bourn Again SHell) come interprete dei comandi, che permette di visualizzare liste
+di numeri interi naturali estraendo da esse la serie di numeri primi contenuti, nonché di
+fornire i relativi fattori di scomposizione per i numeri divisibili.
+Tra le varie funzionalità firstnum permette di estrarre numeri primi gemelli da una serie,
+di estrarre numeri divisibili con solo due fattori di scomposizione, di fornire la posizione
+cardinale ad ogni numero primo visualizzato, di estrarre i numeri che hanno uno specifico
+fattore di scomposizione, ed altro ancora.
+first invece è il fratello minore di firstnum che permette solo di ottenere numeri primi da
+una serie indicata, oppure semplicemente da un singolo valore indicato, a differenza di
+firstnum non possiede ulteriori funzionalità ed opzioni particolari, inoltre visualizza il
+risultato in modo più diretto e discorsivo, quindi è di più semplice utilizzo.
+
+Com'è strutturato Firstnum109a.
+firstnum è un comando di terminale a riga di comando che va digitato al Prompt. Le sue varie
+funzionalità si ottengono impostando dopo il nome del comando stesso delle opzioni strutturate
+nel seguente modo: trattino lettera, oppure trattino lettera lettera. Alle opzioni poi deve
+fare seguito uno o piu valori numerici: ogni opzione richiede uno specifico numero di valori
+numerici indicando gli estremi della serie con il minimo e massimo ed eventualmente un altro
+valore che specifica un parametro. Una tipica opzione poi si suddivide in due parti: la prima
+lettera, da digitare solitamente in minuscolo, identifica il tipo di funzionalità, la seconda
+lettera, non sempre richiesta, in base all'opzione identifica le caratteristiche funzionali o di
+visualizzazzione che tale opzione può offrire. Nel gergo tecnico di Firstnum109a questa seconda
+lettera associata alla lettera che identifica l'opzione stessa viene chiamata Switch o Marker.
+Sebbene sia la lettera che identifica l'opzione che quella che identifica lo Switch è possibile
+digitarle indifferentemente sia con caratteri minuscoli che maiuscoli, è buona norma digitare
+la lettera che identifica l'opzione stessa sempre in minuscolo, mentre la lettera che identifica
+lo Switch è bene che sia digitata con carattere maiuscolo. Questo rende anche più facile poi
+avere un ricordo mnemonico delle varie combinazioni tra opzioni e relativi Switch supportati,
+anche perchè alcune opzioni ed alcuni Switch sono rappesentati dalla medesima lettera.
+Alcuni Switch sono riservati solo a specifiche opzioni, mentre altri sono comuni a più opzioni.
+Quando un opzione è seguita da uno Switch richiede sempre a seguire due valori numerici, mentre
+in alcuni casi anche tre.
+Alcune opzioni inoltre non prevedono l'uso di nessuno Switch, ma possono richiedere tre valori
+numerici come parametri da impostare dopo l'opzione e lo Switch.
+Oltre alle più comuni opzioni sopra citate ce ne sono altre speciali che permettono di visua-
+lizzare informazioni di aiuto e un manuale rapido di l'utilizzo, tutte queste opzioni verranno
+in seguito riproposte più avanti in questo tutorial. Inoltre sono disponibili degli argomenti
+composti da una coppia di lettere da utilizzare per la preconfigurazione postuma della lingua
+locale (vedere più avanti per maggiori informazioni).
+
+Come si installa Firstnum109a.
+L'installazione di Firstnum109a è relativamente semplice. Dopo avere scaricato da GitHub il file
+relativo all'ultima versione disponibile ovvero Firstnum109a-20260421.tar.xz, oppure attraverso
+l'apposito pulsante CODE che apre il menù con la voce Download zip, è sufficiente fare doppio
+click sull'icona del pacchetto Firstnum109a-20260421.tar.xz scaricato (che di solito è presente
+nella cartella Scaricati) per scompattare tutti i file presenti nella cartella ivi contenuta.
+Per scompattare il pacchetto Software, seguire la procedura del programma di scompattazione da
+ambiente grafico, oppure scompattare il file tramite comando da terminale.
+
+Dopo aver scompattato la cartella in un percorso del FileSystem a scelta (solitamente nella
+cartella utente), aprire il terminale a riga di comando e digitare il comando  cd  seguito dal
+percorso che porta a tale cartella ad esempio:
+
+$ cd Scaricati/Firstnum-public-109a.tar.xz (quindi premere il tasto INVIO)
+
+(Nota: il simbolo del dollaro $ rappresenta qui il Prompt della riga di comando del terminale.)
+
+Individuare quindi il file install.sh, questo file è lo script di installazione di firstnum.
+digitare quindi sempre dal terminale
+
+$ . install.sh  [INVIO]
+
+(Attenzione al punto dopo $, che va digitato esattamente in tale modo separato da uno spazio.)
+
+(Nota: [INVIO] significa che occorre premere il tasto di INVIO o RETURN)
+
+Una volta lanciato lo Script di installazione, sarà richiesta la Password dell'utente; dopo
+aver inserito la Password utente, un attimo dopo lo Script termina e Firstnum109a è installato.
+Se l'installazione avviene correttamente non apparirà nulla oltre al messaggio di avvenuta
+installazione.
+Nel caso l'installazione non andasse a buon fine, provare a ripeterla.
+Le cause di mancata installazione in genere sono due: o l'account utente di sistema non ha i
+permessi necessari, oppure esiste gia una altra versione di firstnum installata in cui i file
+e cartelle coinvolte non hanno i permessi di scrittura abilitati.
+In tali casi procedere alla cancellazione manuale, oppure abilitare i permessi di scrittura
+ai relativi file e cartelle. Fare riferimento al file LEGGIMI per quanto concerne i file
+e le cartelle usati da Firstnum109a che sono comuni anche alle versioni precedenti.
+Se sul computer non è istallata nessuna precedende versione di Firstnum10xx, la procedura di
+installazione non dovrebbe quasi mai presentare problemi di sorta, tuttavia se ciò accadesse
+è possibile effettuare una installazione manuale, tra l'altro molto semplice, descritta nel
+file LEGGIMI!
+
+Primo approccio con il comando first.
+Dopo avere installato Firstnum109a, si hanno a disposizione due comandi, precisamente firstnum
+e first. Quest'ultimo è una verione ridotta che serve solo a ricercare numeri primi. digitare:
+
+$ first  [INVIO]
+
+(Nota: il simbolo del dollaro $ rappresenta il Prompt presente sul terminale a riga di comando.)
+
+OUTPUT DEL COMANDO:
+
+ Language:
+  1 = ENGLISH (Default)
+  2 = ITALIANO
+  3 = ESPAÑOL
+  4 = FRANÇAIS
+  5 = PORTUGÛES
+  6 = DEUTCHE
+ Choose?
+
+La prima volta che viene invocato il comando first viene visualizzato un menù che permette di
+scegliere la lingua locale.
+Il menù visualizza ogni termine della lingua nell'idioma della lingua stessa, sono disponibili
+al momento sei lingue; Inglese, Italiano, Spagnolo, Francese, Portoghese e Tedesco.
+La lingua preimpostata è l'inglese, premendo semplicemente INVIO viene settata tale lingua,
+altimenti va effettuata una scelta immettendo un numero tra 1 e 6.
+Questa procedura viene richiesta esattamente allo stesso modo anche da firstnum. Da notare
+che i due comandi (first e firstnum) hanno configurazioni della lingua separate.
+Inoltre solo per firstnum è disponibile l'opzione -clr che elimina il file di configurazione
+riportando firstnum in modalità iniziale. Verrà riproposto quindi il menù di configurazione
+della lingua locale.
+Digitare quindi il numero corrispondente alla lingua scelta, ad esempio il 2 per la lingua
+italiana seguito da INVIO. Verrà così creato un file di configurazzione per mantenere la
+impostazione della lingua prescelta.
+
+OUTPUT DEL COMANDO:
+
+ Language:
+  1 = ENGLISH (Default)
+  2 = ITALIANO
+  3 = ESPAÑOL
+  4 = FRANÇAIS
+  5 = PORTUGÛES
+  6 = DEUTCHE
+ Choose? 2  [INVIO]
+
+
+Il file di configurazione [.fstlang.cfg] è stato creato.
+Impostazione per la lingua italiana.
++++Ok.
+
+È possibile cambiare la lingua in qualunque momento tra quelle disponibili impostando uno dei
+seguenti argomenti dopo il nome del comando: EN, IT, ES, FR, PT, DE (Nota che si devono usare
+obbligatoriamente solo caratteri maiuscoli, altrimenti il comando non funzione e viene visua-
+lizzato un messaggio di errore.)
+Ad esempio digitare:
+
+$ first FR  [INVIO]
+
+OUTPUT DEL COMANDO:
+
+Fichier de configuration modifié.
+Configuration de la langue français.
++++Ok.
+
+per cambiare la lingua corrente del comando first nella lingua francese.
+altrimenti digitare:
+
+$ firstnum DE  [INVIO]
+
+OUTPUT DEL COMANDO:
+
+ICH BENACHRICHTIGE:
+Sprache nicht vollstandig implementier.
+Die Standardsprache bleibt erhalten.
+
+Konfigurationsdatei geändert.
+Einstellung für deutsche Sprache.
++++Ok.
+
+per cambiare la lingua corrente del comando firstnum in lingua tedesca.
+
+(Nota: Da ora in poi non verrà più utilizzato "OUTPUT DEL COMANDO:" per indicare che ciò che
+ segue è appunto quello che il comando mostra sul terminale, ma semplicemente a partire dalla
+ riga successiva a quella che indica il comando da eseguire stesso, è l'output del comando,
+ ovvero cio che viene mostrato sul terminale in seguito alla sua esecuzione.)
+
+Ora è possibile iniziare ad usare proficuamente first, ed in seguito firstnum, per il suo scopo,
+digitare:
+
+$ first 1319  [INVIO]
+1319 è un numero primo.
+
+(Nota: d'ora in poi, per brevità e pulizia nell'esposizione, dopo avere digitato il comando
+il tasto [INVIO] da premere si riterrà sottinteso.)
+
+$ first 1317
+1317 è divisibile per 3.
+
+first permette anche di specificare delle serie numeriche con una ampiezza massima di 65536
+elementi; digitare:
+
+$ first 131 237
+
+Serie dal numero: 131 al numero: 237
+
+ 131   137   139   149   151   157   163   167   173   179   181   191   193   197   199   211
+ 223   227   229   233
+
+------------------------------
+Elaborati 107 numeri.
+Sono presenti 20 numeri primi.
+------------------------------
+
+Come si può notare in tale caso verranno visualizzati tutti i numeri primi della serie indicata
+disposti su più righe, oltre ad indicare il numero di elementi della serie indicata e la quan-
+tità di numeri primi visualizzati.
+Oltre a queste funzionalità first dispone di due opzioni:  -h  ed  --help  che rispettivamente
+visualizzano informazioni sul suo utilizzo, in più è possibile ottenere semplicemente informa-
+zioni essenziali senza specificare nessuna opzione; digitare:
+
+$ first
+
+first          Release 1.03
+---------------------------
+    ~© (1991-2024) GNU/GPL2
+    by G. B. Alias PiErre60
+
+Usare: first -h  Aiuto rapido,
+     o first --help  Aiuto dettagliato.
+
+per visualizzare brevi ed essenziali informazioni.
+oppure digitare:
+
+$ first -h
+
+first  Version 1.04-20260416
+(~© (1991-2026) GNU/GPL2)
+
+Usare: first --help  Visualizza l'aiuto esteso,
+     o first [VALORE]  Informa se il valore è un numero primo,
+     o first [VALORE MINIMO] [VALORE MASSIMO]
+              Visualizza una lista di numeri primi.
+
+per visualizzare questo breve aiuto.
+oppure digitare:
+
+$ first --help
+
+first  Versione 1.04-20260416
+(~© (1991-2026) GNU/GPL2)
+
+Usare: first [OPZIONE] [VALORE [VALORE]]  Modello della sintassi d'uso.
+       first  Informazioni ed aiuto.
+       first -h  Aiuto rapido.
+       first --help  Questo aiuto.
+       first [VALORE]  Informa se il valore è un numero primo.
+       first [VALORE MINIMO] [VALORE MASSIMO]  Lista di numeri primi.
+
+Ampiezza della serie: valore massimo - valore minimo + 1 <= 65535
+Visualizzazione su terminale di testo standard: raccomandato 80 colonne, 24 righe.
+Per la redirezione dell'uscita verso un file, usare > o >>
+Esempi: first [VALORE MINIMO] [VALORE MASSIMO] > nomefile  Salva nel file.
+      o first [VALORE MINIMO] [VALORE MASSIMO] >> nome_file  Aggiungi al file.
+
+digitare: first 12345
+          first 1 65536
+          first 111000 123999
+          first 100001 165536 > $HOME/lista_di_primi
+          first 10000  75535 >> $HOME/lista_di_primi
+          first 123450000 123459999 | less
+
+per visualizzare questo aiuto esteso sul modo di utilizzo.
+Il comando first non ha altre funzionalità se non quelle visualizzate dall'opzione --help
+
+Primo approccio con il comando firstnum.
+firstnum è un comando molto più sofisticato di first che abbina molteplici funzionalità ad una
+serie di opzioni seguiti da uno o due valori numerici. In modo molto simile a first, firstnum
+possiede opzioni di aiuto, oltre ad ottenere un primo aiuto essenziale digitando solo il nome
+del comando. Di seguito vengono esposte tutte le varie opzioni sulla base di un esempio pratico.
+Per iniziare ad usare firstnum digitare quindi:
+
+$ firstnum
+
+Se è la prima volta che lo si invoca dopo l'installazione viene visualizzato un breve menù che
+permette di scegliere la lingua locale, la procedura da seguire è identica a quella di first.
+digitare:
+
+$ firstnum
+
+ Language:
+  1 = ENGLISH (Default)
+  2 = ITALIANO
+  3 = ESPAÑOL
+  4 = FRANÇAIS
+  5 = PORTUGÛES
+  6 = DEUTCHE
+ Choose?
+
+dopdiché alla comparsa di questo menù digitare 2 [INVIO] per preselezionare la lingua italiana,
+in risposta si ottiene il seguente messaggio:
+
+Il file di configurazione [.firstlang.cfg] è stato creato.
+Impostazione per la lingua italiana.
++++Ok.
+
+Anche in firstnum ovviamente è possibile cambiare lingua locale in qualunque momento tramite
+gli argomenti EN, IT, ES, FR, PT e DE da fare seguire al comando.
+
+Per eliminare la configurazione della lingua locale precedentemente impostata e ripristinare
+firstnum nella configurazione iniziale è disponibile l'opzione -clr.
+digitare:
+
+$ firstnum -clr
+
+per eliminare il file di configurazione della lingua locale.
+
+Il comando firstnum nella sua forma più semplice può essere utilizzato senza opzioni e con un
+solo valore numerico che rappresenta il numero naturale da analizzare, digitare quindi
+
+$ firstnum 123456
+
+123456 = (2^6) 3 643
+
+per conoscere i fattori primi di scomposizione di tale valore digitato.
+
+Analizziamo ora la serie di numeri naturali compresa tra 119 e 141 estremi inclusi.
+digitiamo quindi al prompt:
+
+$ firstnum 119 141
+
+  119 = 7 17
+  120 = (2^3) 3 5
+  121 = (11^2)
+  122 = 2 61
+  123 = 3 41
+  124 = (2^2) 31
+  125 = (5^3)
+  126 = 2 (3^2) 7
+ 127
+  128 = (2^7)
+  129 = 3 43
+  130 = 2 5 13
+ 131
+  132 = (2^2) 3 11
+  133 = 7 19
+  134 = 2 67
+  135 = (3^3) 5
+  136 = (2^3) 17
+ 137
+  138 = 2 3 23
+ 139
+  140 = (2^2) 5 7
+  141 = 3 47
+
+L'esecuzione del comando firstnum seguito da due valori numerici che indicano gli estremi
+della serie indicata, ha prodotto questo output. Si possono osservare i quattro numeri
+primi con una indentazione di una cifra verso sinistra per una maggiore visibilità.
+Questo è il modo più semplice per visualizzare delle serie numeriche.
+Si può notare inoltre come alcuni fattori primi siano indicati nel formato esponenziale
+(2^3) significa due elevato alla potenza di tre, ovvero due alla terza. Tale rappresentazione
+viene fatta quando uno dei fattori di scomposizione è ripetuto più volte, in caso contrario
+vengono visualizzati singolarmente i diversi fattori di scomposizione.
+
+Per visualizzare sempre singolarmente i vari fattori di scomposizione occorre usare il comando
+firstnum con l'opzione -s
+digitare quindi:
+
+$ firstnum -s 119 141
+
+Scomposizione in fattori primi da 119 a 141
+
+  119 = 7 17
+  120 = 2 2 2 3 5
+  121 = 11 11
+  122 = 2 61
+  123 = 3 41
+  124 = 2 2 31
+  125 = 5 5 5
+  126 = 2 3 3 7
+  127
+  128 = 2 2 2 2 2 2 2
+  129 = 3 43
+  130 = 2 5 13
+  131
+  132 = 2 2 3 11
+  133 = 7 19
+  134 = 2 67
+  135 = 3 3 3 5
+  136 = 2 2 2 17
+  137
+  138 = 2 3 23
+  139
+  140 = 2 2 5 7
+  141 = 3 47
+
+
+firstnum 1.09a     Rapporto riassuntivo finale:
+-----------------------------------------------
+Serie dal numero:                           119
+Al numero:                                  141
+Totale dei numeri della serie:               23
+Totale dei numeri primi:                      4
+Totale dei numeri divisibili:                19
+Fattore primo iniziale più alto:             11
+Distanza massima tra due numeri primi:        8
+Distanza media tra due numeri primi:          4
+
+L'esecuzione del comando con tale opzione ha generato l'output sopra riportato, come si può
+osservare, rispetto al comando precedente, oltre alla lista di numeri primi, di numeri
+divisibili e di fattori di scomposizione della serie indicata riportati singolarmente, qui
+vengono visualizzati anche un prospetto di testa ed uno di coda. Il prospetto di coda contiene
+informazioni riassuntive e statistiche riguardanti la serie numerica indicata da analizzare.
+Molte opzioni visualizzano questi prospetti di testa e di coda, tuttavia ci sono altrettante
+opzioni che non lo fanno, ciò risulta utile nel caso si voglia creare liste concatenate su
+file tramite l'utilizzo dell'operatore > oppure >> di redirezione dell'output.
+
+Per segnare e rendere maggiormente visibili alcuni valori a colpo d'occhio in una lunga lista
+sono disponibili gli Switch (detti Marker) P, S, U e D  da far seguire ad alcune opzioni.
+Per esempio se si vuole marcare la posizione dei numeri primi all'interno della lista si usa
+il Marker P, mentre se si vogliono rimarcare tutti i numeri che hanno uno specifico fattore
+di scomposizione si utilizza il Marker S.
+Digitare:
+
+$ firstnum -fS 119 141 3
+
+Scomposizione in fattori primi da 119 a 141
+
+  119 = 7 17
+  120 = (2^3) 3 5
+  121 = (11^2)
+  122 = 2 61
+> 123 = 3 41
+  124 = (2^2) 31
+  125 = (5^3)
+  126 = 2 (3^2) 7
+  127
+  128 = (2^7)
+> 129 = 3 43
+  130 = 2 5 13
+  131
+  132 = (2^2) 3 11
+  133 = 7 19
+  134 = 2 67
+> 135 = (3^3) 5
+  136 = (2^3) 17
+  137
+  138 = 2 3 23
+  139
+  140 = (2^2) 5 7
+> 141 = 3 47
+
+
+firstnum 1.09a     Rapporto riassuntivo finale:
+-----------------------------------------------
+Serie dal numero:                           119
+Al numero:                                  141
+Totale dei numeri della serie:               23
+Totale dei numeri primi:                      4
+Totale dei numeri divisibili:                19
+Fattore primo iniziale più alto:             11
+Fattore primo selezionato:                    3
+Quantità di valori selezionati:               4
+Distanza massima tra due numeri primi:        8
+Distanza media tra due numeri primi:          4
+
+Come si può notare i numeri 123, 129, 135 e 141 sono stati contrassegnati alla loro sinistra
+con il simbolo > che è appunto il Marker. In questo caso è stato richiesto di contrassegnare
+tutti i numeri il cui fattore primo di scomposizione è il 3, indicato come terzo parametro
+dopo l'opzione composta, nel comando digitato.
+
+I numeri che hanno solo due fattori primi di scomposizione, oltre che l'unità e se stesso,
+possono essere trovati all'interno di una serie indicata tramite l'opzione -k.
+Digitare:
+
+$ firstnum -k 119 141
+
+Scomposizione in fattori primi da 119 a 141
+(Serie numerica con due valori di scomposizione.)
+
+  119 = 7 17
+  121 = (11^2)
+  122 = 2 61
+  123 = 3 41
+  129 = 3 43
+  133 = 7 19
+  134 = 2 67
+  141 = 3 47
+
+
+firstnum 1.09a     Rapporto riassuntivo finale:
+-----------------------------------------------
+Serie dal numero:                           119
+Al numero:                                  141
+Totale dei numeri della serie:               23
+Totale dei numeri divisibili:                19
+Valori coerenti visualizzati:                 8
+Fattore primo iniziale più alto:             11
+
+Una delle opzioni inteessanti è -g che permette di trovare i numeri primi gemelli all'interno
+di una serie specificata. I numeri primi gemelli si dicono tali se distanti tra loro solo da
+un numero divisibile.
+Digitare:
+
+$ firstnum -g 119 199
+
+Numeri primi gemelli evidenziati, da 119 a 199
+
+ 137 ⋄ 139
+ 149 ⋄ 151
+ 179 ⋄ 181
+ 191 ⋄ 193
+ 197 ⋄ 199
+
+
+firstnum 1.09a     Rapporto riassuntivo finale:
+-----------------------------------------------
+Serie dal numero:                           119
+Al numero:                                  199
+Totale dei numeri della serie:               81
+Totale dei numeri primi:                     16
+Numeri primi gemelli (Coppie):                5
+Distanza massima tra due numeri primi:       10
+Distanza media tra due numeri primi:          5
+
+Il comando firstnum dispone di una varietà di opzioni e di Switch che permettono di filtrare
+l'output con varie modalità funzionali per analizzare serie indicate di numeri naturali.
+Ogni serie che puo essere indicata ha una grandezza massima di 65536 valori, questo è un
+limite imposto per evitare di generare liste eccessivamente lunghe che poi difficilmente
+risulterebbero visionabili. Tuttavia ci sono due opzioni (p, n) che fanno uso dello Switch T
+il quale permette un output di tipo tabellare, in tal caso il limite per ogni serie indicata
+viene esteso al valore massimo di 262144 elementi.
+
+Lo Switch T associato all'opzione -p permette di visualizzare i numeri primi di una serie
+in formato tabellare, dove il numero delle colonne diminuisce all'aumentare delle cifre dei
+numeri. Si passa da un massimo di 19 colonne ad un minimo 7 colonne, mantenendo la larghezza
+complessiva circa nello stesso modo.
+Numero di colonne predeterminate per valori da 1 a 4294967295:  19, 16, 14, 12, 11, 10, 9, 8, 7
+Digitare:
+
+$ firstnum -pT 5000 5500
+
+Numeri primi da 5000 a 5500
+
+ 5003   5009   5011   5021   5023   5039   5051   5059   5077   5081   5087   5099   5101   5107
+ 5113   5119   5147   5153   5167   5171   5179   5189   5197   5209   5227   5231   5233   5237
+ 5261   5273   5279   5281   5297   5303   5309   5323   5333   5347   5351   5381   5387   5393
+ 5399   5407   5413   5417   5419   5431   5437   5441   5443   5449   5471   5477   5479   5483
+
+-------------------------
+Serie dal numero:    5000
+Al numero:           5500
+Numeri processati:    501
+Numeri primi:          56
+
+Lo Switch T associato all'opzione -n permette di visualizzare i numeri divisibili dispari di
+una serie in formato tabellare, dove il numero delle colonne diminuisce all'aumentare delle
+cifre dei numeri. Si passa da un massimo di 19 colonne ad un minimo 7 colonne, mantenendo la
+larghezza complessiva circa nello stesso modo.
+Digitare:
+
+$ firstnum -nT 5000 5300
+
+Numeri divisibili dispari da 5000 a 5300
+
+ 5001   5005   5007   5013   5015   5017   5019   5025   5027   5029   5031   5033   5035   5037
+ 5041   5043   5045   5047   5049   5053   5055   5057   5061   5063   5065   5067   5069   5071
+ 5073   5075   5079   5083   5085   5089   5091   5093   5095   5097   5103   5105   5109   5111
+ 5115   5117   5121   5123   5125   5127   5129   5131   5133   5135   5137   5139   5141   5143
+ 5145   5149   5151   5155   5157   5159   5161   5163   5165   5169   5173   5175   5177   5181
+ 5183   5185   5187   5191   5193   5195   5199   5201   5203   5205   5207   5211   5213   5215
+ 5217   5219   5221   5223   5225   5229   5235   5239   5241   5243   5245   5247   5249   5251
+ 5253   5255   5257   5259   5263   5265   5267   5269   5271   5275   5277   5283   5285   5287
+ 5289   5291   5293   5295   5299
+
+-------------------------
+Serie dal numero:    5000
+Al numero:           5300
+Numeri processati:    301
+Numeri divisibili:    268
+Numeri mostrati:      117
+
+
+Dopo questo breve tutorial che ha guidato alla scoperta di alcune funzionalità di firstnum,
+è giunto il momento di scoprire tutte le altre opzioni disponibili, quindi a questo punto non
+rimane altro da fare che consultare la guida rapida integrata seguendo le informazioni fornite
+dall opzione --help, oppure consultare la guida rapida integrata, tramite l'opzione -?I.
+
+Il comando firstnum è dotato di una sofisticata gestione degli errori di digitazione che permette,
+tramite suggerimenti derivanti dalla tipologia dell'errore stesso di attuare una sorta di guida
+per l'autocorrezione. Qui di seguito sono elencati alcune tipologie di errore.
+Digitare:
+
+$ firstnum dS 123456789
+Errore: Argomento errato e/o mancante!
+
+$ firstnum -x
+Errore: Opzione errata!
+Errore: Argomento mancante!
+
+$ firstnum xy
+Errore: Opzione e Switch errati!
+Errore: Argomento errato!
+
+$ firstnum -xy 100000
+Errore: Opzione e Switch errati!
+Errore: Argomento mancante!
+
+$ firstnum - 123 234
+Errore: Opzione mancante!
+
+$ firstnum - 123 234 7
+Errore: Opzione e Switch mancanti!
+
+$ firstnum -sT 12
+Errore: Combinazione dell'opzione con Switch non valida!
+Errore: Argomenti mancanti!
+
+$ firstnum -fT 200 300 7 67
+Errore: Troppi argomenti!
+Errore: Combinazione dell'opzione con Switch non valida!
+Errore: Switch errato!
+
+$ firstnum -xD 180
+Errore: Opzione errata!
+Errore: Argomento mancante!
+
+$ firstnum -fx
+Errore: Switch errato!
+Errore: Argomenti mancanti!
+
+$ firstnum -fx 200 300 7 67
+Errore: Troppi argomenti!
+Errore: Switch errato!
+
+$ firstnum -sP 100 90000
+Errore: Intervallo dei valori immessi troppo grande!
+
+$ firstnum -sS 1000 900
+Errore: Valori degli argomenti invertiti!
+
+$ firstnum 98765432100
+Errore: Ordine di grandezza superato!
+Errore: Valore troppo grande!
+
+Questi sono solo alcuni dei messaggi di errore che si possono presentare dopo la digitazione.
+Il comando prevede decine di combinazioni dei numerosi messaggi di errore che possono essere
+visualizzati in conseguenza di una situazione anomala riscontrata sia durante la digitazione
+che durante l?elaborazione.
+
+Buona sperimentazione.
+
