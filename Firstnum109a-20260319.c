@@ -39,7 +39,7 @@
    ----------------------------------------
    Release pubblica GNU-CC       30-03-2025
    Primo Update pubblico         31-03-2025
-   Ultimo Update pubblico        21-04-2026
+   Ultimo Update pubblico        22-04-2026
    ----------------------------------------
    Compilato in origine con:
    Lattice®-SAS® C MC680x0  Vers. 5.05
@@ -6072,32 +6072,32 @@ int main(int argc,char *argv[]) {
       if((option==PRIME&&subopt==CNT)&&argc>3) {
          if(lang==ENGLISH) {
             printf("Series of prime numbers from %lu to %lu\n",cntbas,cntlim);
-            printf("Corresponding series from number %lu to number %lu\n",num,limit);
+            printf("Corresponding series from prime number %lu to the prime number %lu\n",num,limit);
             printf("(With display of the corresponding cardinal position.)\n\n");
          }
          else if(lang==ITALIANO) {
             printf("Serie di numeri primi dalla posizione %lu alla posizione %lu\n",cntbas,cntlim);
-            printf("Serie corrispondente dal numero %lu al numero %lu\n",num,limit);
+            printf("Serie corrispondente dal numero primo %lu al numero primo %lu\n",num,limit);
             printf("(Con visualizzazione della corrispondente posizione cardinale.)\n\n");
          }
          else if(lang==ESPANOL) {
-            printf("Serie de números primos de %lu a %lu\n",cntbas,cntlim);
-            printf("Serie correspondiente del número %lu al número %lu\n",num,limit);
+            printf("Series de números primos de %lu a %lu\n",cntbas,cntlim);
+            printf("Series correspondientes desde el número primo %lu hasta el número primo %lu\n",num,limit);
             printf("(Con visualización de la posición cardinal correspondiente.)\n\n");
          }
          else if(lang==FRANCAIS) {
             printf("Suite des nombres premiers de %lu à %lu\n",cntbas,cntlim);
-            printf("Série correspondante du numéro %lu au numéro %lu\n",num,limit);
+            printf("Série correspondante du nombre premier %lu au nombre premier %lu\n",num,limit);
             printf("(Avec affichage de la position cardinale correspondante.)\n\n");
          }
          else if(lang==PORTUGUES) {
-            printf("Sèrie de números primos de %lu a %lu\n",cntbas,cntlim);
-            printf("Série correspondente do número %lu ao número %lu\n",num,limit);
+            printf("Sèries de números primos de %lu a %lu\n",cntbas,cntlim);
+            printf("Séries correspondentes do número primo %lu ao número primo %lu\n",num,limit);
             printf("(Com exibição da posição cardinal correspondente.)\n\n");
          }
          else if(lang==DEUTCHE) {
             printf("Volge von Primezahlen von %lu bis %lu\n",cntbas,cntlim);
-            printf("Entsprechende Zahlenreihe von Nummer %lu bis Nummer %lu\n",num,limit);
+            printf("Entsprechende Zahlenreihe von der Primzahl %lu bis zur Primzahl %lu\n",num,limit);
             printf("(Mit Anzeige der entsprechenden Kardinalstelle.)\n\n");
          }
       }
