@@ -1,0 +1,109 @@
+
+Update notes for version 1.09a
+------------------------------
+
+In the current version of firstnum109a, numerous improvements have been made and several
+bugs fixed, as well as display behaviors that in the previous version, firstnum108b, were
+sometimes left to chance.
+Furthermore, importantly, the functionality related to the -B option has been partially
+re-implemented, which suffered from a serious bug in the previous version. On some occasions,
+depending on the numerical series indicated, it did not provide correct results regarding
+statistical data, with a discrepancy within +/-1 of the values of the calculated series of
+prime and divisible numbers.
+The procedure for calculating the mean distance between two adjacent prime numbers relative
+to the other options has also been changed, and is now much more accurate for very short
+numerical series; additionally, new entries have been introduced in the tail summary regar-
+ding the new functionalities implemented via new options and new switches.
+The display of the '-n' and '-nT' options has also been substantially changed; now, in
+accordance with the functionality of these features, only odd natural numbers that are
+divisible are displayed. The '-n' option now also provides prime factorization factors,
+while the '-nT' option provides only a list of odd natural numbers that are divisible.
+In addition to this, some other options have also been implemented that add new and interes-
+ting functionalities, while some others already present have been completed and now provide
+more coherent visual results.
+
+Among the new functionalities introduced, the following options have been implemented:
+
+ -g   Provides a list of twin prime numbers of the indicated series, with relative informa-
+      tive and statistical headers and footers. The option strictly requires two arguments.
+      Usage example: firstnum -g 1234 2345.
+
+ -j   Provides only a numerical list, without header or footer, of the twin prime numbers of
+      the indicated numerical series. This option is suitable for obtaining clean numerical
+      series on file via output redirection.
+      Usage example: firstnum -j 15000 25000.
+
+ -jL  Option similar to '-j', but the addition of the 'L' switch enables specific indentation
+      suitable for appending numerical series to files seamlessly.
+      Usage example: firstnum -jL 12000 48000 >> ./file_name.
+
+ -e   Option similar to '-k' already implemented in the previous version, designed to obtain
+      numerical series lists without headers or footers, suitable for output redirection to
+      file. Usage example: firstnum -e 1234 56789 > ./file_name.
+
+ -eL  Option similar to '-e', but the addition of the 'L' switch enables indentation suitable
+      for concatenating multiple numerical series lists to files seamlessly.
+      Usage example: firstnum -eL 1234 56789 >> ./file_name.
+
+ -pN  The addition of the new 'N' switch allows obtaining the corresponding cardinal position
+      for each prime number displayed in the list. For example, the prime numbers 31 and 37
+      are respectively the eleventh and twelfth among all prime numbers starting from the
+      lowest prime: 2. This option also provides the relative informative and statistical
+      headers and footers. The option also allows specifying a single value.
+      Usage examples: firstnum -pN 1129 - firstnum -pN 1500 2000.
+
+ -pC  Provides a list of prime numbers by simply indicating their cardinal position, where
+      the prime number 2 is in the first position. By indicating two parameters, a final
+      statistical report concerning the indicated series is also displayed. The option also
+      allows indicating a single cardinal position as a parameter. This option, like the
+      previous '-pN', displays pairs of prime numbers and their cardinal position enclosed
+      in parentheses; example: 1123 (188).
+      Usage examples: firstnum -pC 987 - firstnum -pC 987 1187.
+
+ -lN  Option similar to '-pN', but intended for obtaining clean numerical series lists suita-
+      ble for output redirection to file. Generates a clean list without headers and footers.
+      Usage example: firstnum -lN 12345 23456.
+
+ -lR  Option similar to '-pN' but intended for concatenating multiple numerical series lists
+      to files seamlessly. Generates a clean output without headers or footers.
+      Usage example: firstnum -lR 12345 67890 >> ./file_name.
+
+ -lC  Option similar to '-pC' but provides no header or footer, suitable for obtaining clean
+      series lists for output redirection to file.
+      Usage examples: firstnum -lC 1000 1050 - firstnum -lC 100 9000 > ./file_name.
+
+ -lB  Option similar to '-lC' but intended for concatenating multiple numerical series lists
+      to files seamlessly. Provides a clean output without header and footer as well as a
+      specific indentation suitable for concatenation.
+      Usage example: firstnum -lB 1 65535 >> ./file_name.
+
+ -dV  Provides all divisibility values of a natural number or a series of natural numbers.
+      Divisibility values may not be prime factors and may also be multiples of other values
+      already present. Usage example: firstnum -dV 10456.
+      The example produces the following output: 10456 = 2 4 8 1307 2614 5228.
+
+ -dW  Option similar to '-dV', but additionally provides the ability to set an indentation
+      value during the display of numerical series. Explicitly requires three parameters.
+      Usage example: firstnum -dW 10456 10476 4.
+
+ -qV  Option similar to '-dV', but suitable for generating numerical series via output redi-
+      rection to file. Provides a clean numerical list, without header and footer.
+      Usage example: firstnum -qV 10456 10599 > ./file_name.
+
+ -qR  Option similar to '-qV', but intended for generating numerical lists in append mode
+      seamlessly to files via output redirection.
+      Usage example: firstnum -qR 1000 1999 >> ./file_name.
+
+Aesthetic and functional improvements have been made to the source code with the addition of
+new and clearer comments; furthermore, the names of several variables and constants have been
+changed to make them more self-explanatory, overall improving the understanding of the code.
+Some wordings in different languages have been improved, making them more consistent with the
+specific context. The installation procedure has also been completely revised and now includes
+a convenient uninstallation procedure. All online help has been improved by introducing more
+usage examples of the various options and modes. Finally, a new integrated manual in Spanish
+and a new quick help option -?O have been added, which displays a table showing all options
+divided by type, functionality, and display mode, useful for quick reference of the countless
+combinations between options and functional switches.
+It is recommended to install this new version and consider the previous public version of
+firstnum as deprecated.
+
